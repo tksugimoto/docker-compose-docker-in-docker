@@ -3,3 +3,8 @@ services:
   dind:
     image: docker:18.09-dind
     privileged : true
+    volumes:
+      - var_lib_docker:/var/lib/docker
+
+volumes:
+  var_lib_docker:

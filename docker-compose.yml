@@ -1,7 +1,11 @@
 version: '3'
 services:
   dind:
-    image: docker:19.03-dind
+    build:
+      context: .
+      args:
+        http_proxy:
+        https_proxy:
     privileged : true
     volumes:
       - var_lib_docker:/var/lib/docker
